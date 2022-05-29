@@ -88,7 +88,6 @@ class FavoriteArticle extends StatelessWidget {
                         icon: Icon(update.getIcon(title)),
                         onPressed: (){
                             update.removeFromFavoriteList(title);
-                            print("Remove: $title");
                         },
                       ),
                     ],
