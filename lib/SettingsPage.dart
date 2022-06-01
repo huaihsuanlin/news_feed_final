@@ -17,27 +17,26 @@ class _SettingsPage extends State<SettingsPage>{
 
   @override
   Widget build(BuildContext context) {
-    List<String> title = ["amber", "aquablue"];
     return Consumer<UpdateNotifier>(
       builder: (context, themeData, child) {
         return Scaffold(
           body: SettingsList(
             sections: [
               SettingsSection(
-                title: Text('Settings'),
+                title: Text('Colors'),
                 tiles: [
                   SettingsTile(
                     leading: Icon(Icons.color_lens),
-                    title: Text('Change Color'),
-                    value: Text(title[0]),
+                    title: Text('Amber'),
                     onPressed: (BuildContext context) {
-
-                      if(themeData.getTheme() == FlexScheme.amber){
-                        themeData.setTheme(FlexScheme.aquaBlue);
-                      }
-                      else{
-                        themeData.setTheme(FlexScheme.amber);
-                      }
+                      themeData.setTheme(FlexScheme.amber);
+                    },
+                  ),
+                  SettingsTile(
+                    leading: Icon(Icons.color_lens),
+                    title: Text('Aquablue'),
+                    onPressed: (BuildContext context) {
+                      themeData.setTheme(FlexScheme.aquaBlue);
                     },
                   ),
 
